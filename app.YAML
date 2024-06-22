@@ -1,0 +1,10 @@
+runtime: python39
+
+env: flex  # Optional for automatic scaling (recommended)
+
+# Replace with your actual service account email if not using Application Default Credentials
+service_account: "braided-shift-418211@appspot.gserviceaccount.com"
+
+libraries:
+  - name: google-cloud-bigquery
+    version: latest
