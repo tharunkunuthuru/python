@@ -1,4 +1,0 @@
-runtime: python39  # Replace with your chosen runtime if needed
-
-# Optional: Service account for authentication (if not using Application Default Credentials)
-# service_account: "<your-service-account-email>"
