@@ -1,0 +1,7 @@
+runtime: python39
+
+entrypoint: gunicorn -b :$PORT main:app
+
+env_variables:
+  GOOGLE_CLOUD_PROJECT: "qwiklabs-gcp-02-c1591309aa2c"
+  CLOUD_STORAGE_BUCKET: "credit-card-details1"
