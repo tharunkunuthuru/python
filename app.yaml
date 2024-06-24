@@ -2,7 +2,7 @@ runtime: python39
 
 env: flex  # Use the flexible environment
 
-service: https://braided-shift-418211.uc.r.appspot.com/  # Replace with your desired service name
+service: default  # Replace with your desired service name
 
 # Configure Google Cloud Storage for deployment
 deployment:
