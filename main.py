@@ -7,17 +7,20 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def form():
     if request.method == "POST":
-        name = request.form["name"]
-        age = request.form["age"]
-        email = request.form["email"]
-        phone = request.form["phone"]
+        try:
+            name = request.form["name"]
+            age = request.form["age"]
+            email = request.form["email"]
+            phone = request.form["phone"]
 
-        data = f"Name: {name}, Age: {age}, Email: {email}, Phone: {phone}\n"
+            data = f"Name: {name}, Age: {age}, Email: {email}, Phone: {phone}\n"
 
-        # Upload data to Google Cloud Storage
-        upload_to_gcs(data)
+            # Upload data to Google Cloud Storage
+            upload_to_gcs(data)
 
-        return "Form submitted successfully!"
+            return "Form submitted successfully!"
+        except Exception as e:
+            return str(e), 500
     return render_template("form.html")
 
 def upload_to_gcs(data):
