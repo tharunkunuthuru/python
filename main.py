@@ -1,9 +1,9 @@
 from flask import Flask, request, render_template
 from google.cloud import storage
 import os
-from dotenv import load_dotenv
 
-load_dotenv()  # Load environment variables from .env file
+# Load environment variables from .env file (optional, for local development)
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -23,7 +23,9 @@ def form():
 
             return "Form submitted successfully!"
         except Exception as e:
-            return str(e), 500
+            # Log the error for debugging
+            app.logger.error(f"Error processing form: {str(e)}")
+            return "An error occurred. Please try again later.", 500
     return render_template("form.html")
 
 def upload_to_gcs(data):
@@ -39,5 +41,5 @@ def upload_to_gcs(data):
     blob.upload_from_string(data, content_type="text/plain")
 
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+    # App Engine will handle serving the application
+    app.run(debug=True)  # Set debug to True for local development
