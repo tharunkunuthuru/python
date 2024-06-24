@@ -1,14 +1,9 @@
-runtime: python39
+runtime: python39  # Replace with your desired runtime version (e.g., python37)
 
 env: flex  # Use the flexible environment
 
 service: default  # Replace with your desired service name
 
-# Configure Google Cloud Storage for deployment
+# Deployment configuration for the flexible environment
 deployment:
   source: .
-
-# Optional environment variables (replace with your project ID and bucket name)
-env_variables:
-  GCS_BUCKET_NAME: credit-card-details
-
