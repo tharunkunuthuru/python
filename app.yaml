@@ -1,9 +1,3 @@
-runtime: python39  # Replace with your desired runtime version (e.g., python37)
-
-env: flex  # Use the flexible environment
+runtime: python39  # Replace with your desired Python runtime version (e.g., python37)
 
 service: default  # Replace with your desired service name
-
-# Deployment configuration for the flexible environment
-deployment:
-  source: .
