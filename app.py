@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # Configure Google Cloud Storage (replace with your project details)
 client = storage.Client()
-bucket_name = "credit-card-details"  # Replace with your bucket name
+bucket_name = "credit-card-details1"  # Replace with your bucket name
 
 @app.route('/')
 def index():
