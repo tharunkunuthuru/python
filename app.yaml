@@ -1,3 +1,5 @@
 runtime: python39  # Replace with your desired Python runtime version (e.g., python37)
-
 service: default  # Replace with your desired service name
+env_variables:
+  STARTUP_DEADLINE_SECS: "300"  # Replace with desired timeout (default is 180)
+
