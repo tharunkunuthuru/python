@@ -1,6 +1,9 @@
 from flask import Flask, request, render_template
 from google.cloud import storage
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
 
@@ -36,4 +39,5 @@ def upload_to_gcs(data):
     blob.upload_from_string(data, content_type="text/plain")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)
